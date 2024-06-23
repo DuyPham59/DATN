@@ -9,10 +9,10 @@ public class BtnRollToMove : MonoBehaviour
     public Button Roll => roll;
 
     private void Awake()
-    {
-        PlayerRollToMove.instance.CompleteRollToMove = false;
+    {       
         BtnRollToMove.instance = this;
     }
+
     public void ClickBtnRoll()
     {
         roll.gameObject.SetActive(false);

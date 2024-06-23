@@ -1,21 +1,16 @@
-using UnityEngine;
-
 public class EnemyMovingByRoll : EnemyMoving
 {
-    protected override void GrassPos()
+    protected override void Awake()
     {
-        grassPos = grassPos + 1;
+        base.Awake();
+    }
+    protected override void GrassPos(int i)
+    {
+        grassPos = PosEnemy.instance.pos + i;
     }
 
     protected override int NumberDice()
     {
-        return Random.Range(1, 7);
-    }
-
-    protected override void CheckEndTurn()
-    {
-        //gameObject.SetActive(false);
-        //if (Boss1.instance.CollisionEnemy) return;
-        //Turn.instance.PlayerTurn = true;
+        return EnemyRollToMove.instance.RandomDice;
     }
 }

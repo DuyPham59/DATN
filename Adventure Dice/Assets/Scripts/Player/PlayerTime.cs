@@ -3,31 +3,51 @@ using UnityEngine.UI;
 
 public class PlayerTime : MonoBehaviour
 {
-    [SerializeField] private Text time;
+    public static PlayerTime instance;
+    public bool runOne;
+    public Text time;
     private float updateTime;
     private int seconds;
 
     private void Awake()
     {
-        seconds = 30;
-        updateTime = Time.time;
+        PlayerTime.instance = this;
+        runOne = true;
     }
 
     private void Update()
     {
-        if (Time.time - updateTime > 1)
+        if (Turn.instance.PlayerTurn && runOne)
         {
-            updateTime = Time.time;
-            seconds = seconds - 1;
-            time.text = "Time : " + seconds; 
+            runOne = false;
+            seconds = 30;
+            time.text = "Time : " + seconds;
+            updateTime = UnityEngine.Time.time;
         }
 
-        if (seconds == 0)
+        if (Map.Instance.Grass[PosPlayer.instance.pos].transform.childCount > 0)
         {
-            gameObject.SetActive(false);
-            BtnEndTurn.instance.EndTurn.gameObject.SetActive(false);
-            BtnRollToMove.instance.Roll.gameObject.SetActive(false);
-            Turn.instance.PlayerTurn = false;
+            if (Map.Instance.Grass[PosPlayer.instance.pos].transform.GetChild(0).name == "Boss1")
+            {
+                seconds = 30;
+                time.text = "Time : " + seconds;
+                updateTime = UnityEngine.Time.time;
+            }
         }
+
+        if (time.gameObject.activeSelf)
+        {
+            if (UnityEngine.Time.time - updateTime > 1 && !MovingManager.instance.SetActivePlayerMoving())
+            {
+                updateTime = UnityEngine.Time.time;
+                seconds = seconds - 1;
+                time.text = "Time : " + seconds;
+            }
+
+            if (seconds == 0)
+            {
+                Turn.instance.PlayerTurn = false;
+            }
+        }      
     }
 }

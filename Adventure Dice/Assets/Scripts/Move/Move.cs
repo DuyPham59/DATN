@@ -5,6 +5,7 @@ using UnityEngine;
 public abstract class Move : MonoBehaviour
 {
     protected int grassPos;
+    protected int numberDice;
     protected Transform posTarget;
     protected float speed;
     protected Animator jump;
@@ -12,7 +13,7 @@ public abstract class Move : MonoBehaviour
     protected virtual void Awake()
     {
         speed = 2;
-        jump = GetComponent<Animator>();
+        jump = GetComponentInParent<Animator>();
     }
     protected void Moving()
     {
@@ -21,10 +22,10 @@ public abstract class Move : MonoBehaviour
         float PosY = gameObject.transform.parent.position.y;
         float PosTargetX = posTarget.position.x;
         float PosTargetY = posTarget.position.y;
-        float moveTime = speed * Time.deltaTime;
+        float moveTime = speed * UnityEngine.Time.deltaTime;
         if (PosX <= (PosTargetX + moveTime) && PosX >= (PosTargetX - moveTime) && PosY <= (PosTargetY + moveTime) && PosY >= (PosTargetY - moveTime)) return;
         Vector2 direction = posTarget.position - gameObject.transform.parent.position;
-        transform.parent.Translate(direction.normalized * speed * Time.deltaTime);
+        transform.parent.Translate(direction.normalized * speed * UnityEngine.Time.deltaTime);
     }
 
 }

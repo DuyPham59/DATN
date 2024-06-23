@@ -26,7 +26,7 @@ namespace Cainos.PixelArtTopDown_Basic
 
         private void Update()
         {
-            curColor = Color.Lerp(curColor, targetColor, lerpSpeed * Time.deltaTime);
+            curColor = Color.Lerp(curColor, targetColor, lerpSpeed * UnityEngine.Time.deltaTime);
 
             foreach (var r in runes)
             {

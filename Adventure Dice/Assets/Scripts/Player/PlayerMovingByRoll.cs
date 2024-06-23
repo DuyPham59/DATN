@@ -1,23 +1,16 @@
-using System.Collections;
-using System.Collections.Generic;
-using UnityEngine;
-
 public class PlayerMovingByRoll : PlayerMoving
 {
-    protected override void GrassPos()
+    protected override void Awake()
     {
-        grassPos = grassPos + 1;      
+        base.Awake();
+    }
+    protected override void GrassPos(int i)
+    {
+        grassPos = PosPlayer.instance.pos + i;
     }
 
     protected override int NumberDice()
     {
         return PlayerRollToMove.instance.RandomDice;
-    }
-
-    protected override void CheckEndTurn()
-    {
-        //gameObject.SetActive(false);
-        //if (Boss1.instance.CollisionPlayer) return;
-        //Turn.instance.PlayerTurn = false;
     }
 }

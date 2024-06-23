@@ -1,12 +1,12 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
 
 public class MovingManager : MonoBehaviour
 {
     [SerializeField] private List<GameObject> playerMovingArray;
     [SerializeField] private List<GameObject> enemyMovingArray;
+    private float updateTimePlayerActive;
+    private float updateTimeEnemyActive;
     public static MovingManager instance;
 
     private void Awake()
@@ -28,15 +28,32 @@ public class MovingManager : MonoBehaviour
 
     public void ActivePlayerMovingByName(string name)
     {
-        for (int i = 0; i < playerMovingArray.Count; i++)
+
+        if (!SetActivePlayerMoving() /*&& (UnityEngine.Time.time - updateTimePlayerActive) > 1.5*/)
         {
-            if (playerMovingArray[i].name == name)
+            for (int i = 0; i < playerMovingArray.Count; i++)
             {
-                playerMovingArray[i].SetActive(true);
-                return;
+                if (playerMovingArray[i].name == name)
+                {
+                    playerMovingArray[i].SetActive(true);
+                    return;
+                }
             }
         }
     }
+
+    ////public bool FindPlayerMovingByName(string name)
+    //{
+    //    for (int i = 0; i < playerMovingArray.Count; i++)
+    //    {
+    //        if (playerMovingArray[i].name == name)
+    //        {
+    //            if(playerMovingArray[i].activeSelf) return true;
+    //            else return false;
+    //        }
+    //    }
+    //    return false;
+    //}
 
     public bool SetActiveEnemyMoving()
     {
@@ -52,13 +69,29 @@ public class MovingManager : MonoBehaviour
 
     public void ActiveEnemyMovingByName(string name)
     {
-        for (int i = 0; i < enemyMovingArray.Count; i++)
+        if (!SetActiveEnemyMoving() /*&& (UnityEngine.Time.time - updateTimeEnemyActive) > 1.5*/)
         {
-            if (enemyMovingArray[i].name == name)
+            for (int i = 0; i < enemyMovingArray.Count; i++)
             {
-                enemyMovingArray[i].SetActive(true);
-                return;
+                if (enemyMovingArray[i].name == name)
+                {
+                    enemyMovingArray[i].SetActive(true);
+                    return;
+                }
             }
         }
     }
+
+    //public bool FindEnemyMovingByName(string name)
+    //{
+    //    for (int i = 0; i < enemyMovingArray.Count; i++)
+    //    {
+    //        if (enemyMovingArray[i].name == name)
+    //        {
+    //            if (enemyMovingArray[i].activeSelf) return true;
+    //            else return false;
+    //        }
+    //    }
+    //    return false;
+    //}
 }

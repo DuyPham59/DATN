@@ -8,18 +8,14 @@ public class CardUpSmall : MonoBehaviour
 
     private void OnMouseDown()
     {
-        int evenRandom = Random.Range(0, small.Length);
-        if (evenRandom == 0)
+        int posPlayer = PosPlayer.instance.pos;
+        if (Map.Instance.Grass[posPlayer].childCount == 0)
         {
-            Debug.Log("mat xuc xac bang 1");
-        }
-        else if (evenRandom == 1)
-        {
-            Debug.Log("mat xuc xac bang 2");
-        }
-        else
-        {
-            Debug.Log("mat xuc xac bang 3");
+            int random = small[Random.Range(0, small.Length)];
+            CardManager.instance.NumberAndNameCard(random, "Up");
+            MovingManager.instance.ActivePlayerMovingByName("PlayerMovingByCard");
+            gameObject.SetActive(false);
+            CardInPlayerBag.instance.CardBag.Remove(gameObject);
         }
     }
 }

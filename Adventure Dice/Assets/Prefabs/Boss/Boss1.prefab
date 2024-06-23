@@ -9,6 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3962288718741832731}
+  - component: {fileID: 2500313422053598540}
   m_Layer: 0
   m_Name: Boss1
   m_TagString: Boss1
@@ -32,6 +33,18 @@ Transform:
   - {fileID: 8025017558552367839}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2500313422053598540
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463317486165545824}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 07ee74221db427c4ba7fc8c7b8c1902f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8166266494845929861
 GameObject:
   m_ObjectHideFlags: 0
@@ -42,7 +55,6 @@ GameObject:
   m_Component:
   - component: {fileID: 8025017558552367839}
   - component: {fileID: 3427171089450573543}
-  - component: {fileID: 6231660580434032073}
   m_Layer: 0
   m_Name: Desert_05
   m_TagString: Untagged
@@ -105,7 +117,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 3
   m_Sprite: {fileID: 21300000, guid: 9f50ed368b0003a4e8e1f68397b0c086, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -117,15 +129,3 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &6231660580434032073
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8166266494845929861}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 07ee74221db427c4ba7fc8c7b8c1902f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

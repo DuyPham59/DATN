@@ -10,9 +10,9 @@ public class BtnRollAttack : MonoBehaviour
 
     private void Awake()
     {
-        PlayerRollAttack.instance.CompleteRollAttack = false;
         BtnRollAttack.instance = this;
     }
+
     public void ClickBtnRoll()
     {
         roll.gameObject.SetActive(false);

@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,9 +19,5 @@ public class Map : MonoBehaviour
             Transform childTransform = transform.GetChild(i);
             Grass.Add(childTransform);
         }
-    }
-    private void Start()
-    {
-        
     }
 }
