@@ -45,6 +45,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b41b42fadd6a1e246842babf4ef235f7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  aniEnemy: {fileID: 2785801071714527426, guid: c01d942bdb40c4042a453007e20ca89a,
+    type: 3}
+  aniPlayer: {fileID: 5817472490242180414, guid: 0f741296c37445f49b612baa22349315,
+    type: 3}
 --- !u!1 &6714211118562168817
 GameObject:
   m_ObjectHideFlags: 0

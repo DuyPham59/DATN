@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 9029172903816902519}
   - component: {fileID: -7961604920093673751}
   - component: {fileID: -6866756211916356803}
+  - component: {fileID: 5954452684796178982}
   m_Layer: 0
   m_Name: CardDownSmall
   m_TagString: Untagged
@@ -221,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1f690e79322eb554e911f96401d75034, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  card: {fileID: 5954452684796178982}
 --- !u!61 &-6866756211916356803
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -266,6 +268,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4366261, y: 1.9369895}
   m_EdgeRadius: 0
+--- !u!95 &5954452684796178982
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625995636662660266}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b5d34877069db9e458699ed92d9534cc, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3891303690750156294
 GameObject:
   m_ObjectHideFlags: 0

@@ -179,6 +179,7 @@ GameObject:
   - component: {fileID: 9029172903816902519}
   - component: {fileID: -703841080197872676}
   - component: {fileID: 6289729303996740595}
+  - component: {fileID: 1914399740897711584}
   m_Layer: 0
   m_Name: CardUpOdd
   m_TagString: Untagged
@@ -221,6 +222,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fb0892bf0ead7cf4f9d92f6002b90dc4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  card: {fileID: 1914399740897711584}
 --- !u!61 &6289729303996740595
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -266,6 +268,27 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 1.4366261, y: 1.9369895}
   m_EdgeRadius: 0
+--- !u!95 &1914399740897711584
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3625995636662660266}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 3384e43e469ac9a43b4591ec1a375633, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3891303690750156294
 GameObject:
   m_ObjectHideFlags: 0
