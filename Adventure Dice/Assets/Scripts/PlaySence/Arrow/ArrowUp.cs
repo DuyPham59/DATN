@@ -31,13 +31,13 @@ public class ArrowUp : MonoBehaviour
 
     void CheckArrow()
     {
-        if (posArrow == PosPlayer.instance.pos && !MovingManager.instance.SetActivePlayerMoving() && runOne)
+        if (Turn.instance.PlayerTurn && posArrow == PosPlayer.instance.pos && !MovingManager.instance.SetActivePlayerMoving() && runOne)
         {
             Debug.Log("PlayerArrowUp");
             runOne = false;
             StartCoroutine(ActiveText("PlayerMoveUp"));
         }
-        else if (posArrow == PosEnemy.instance.pos && !MovingManager.instance.SetActiveEnemyMoving() && runOne)
+        else if (!Turn.instance.PlayerTurn && posArrow == PosEnemy.instance.pos && !MovingManager.instance.SetActiveEnemyMoving() && runOne)
         {
             Debug.Log("EnemyArrowUp");
             runOne = false;

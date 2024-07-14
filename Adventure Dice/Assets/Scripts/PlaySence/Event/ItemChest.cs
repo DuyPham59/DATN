@@ -32,13 +32,13 @@ public class ItemChest : MonoBehaviour
     void CheckItemChest()
     {
 
-        if (posItemChest == PosPlayer.instance.pos && !MovingManager.instance.SetActivePlayerMoving() && !runOne)
+        if (Turn.instance.PlayerTurn && posItemChest == PosPlayer.instance.pos && !MovingManager.instance.SetActivePlayerMoving() && !runOne)
         {
             runOne = true;
             StartCoroutine(ActiveText("PlayerChest"));
             Debug.Log("AddCardplayer");
         }
-        else if (posItemChest == PosEnemy.instance.pos && !MovingManager.instance.SetActiveEnemyMoving() && !runOne)
+        else if (!Turn.instance.PlayerTurn && posItemChest == PosEnemy.instance.pos && !MovingManager.instance.SetActiveEnemyMoving() && !runOne)
         {
             runOne = true;
             StartCoroutine(ActiveText("EnemyChest"));

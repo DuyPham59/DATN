@@ -9,6 +9,7 @@ public class CardManager : MonoBehaviour
     private int numberCard;
     private string nameCard;
     private GameObject card;
+    public bool statePlayerUseCard;
     public static CardManager instance;
 
     public int NumberCard  => numberCard;

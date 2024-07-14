@@ -171,7 +171,7 @@ public class ItemTrap : MonoBehaviour
                 int diceExit = Random.Range(0, listNumberDice.Count);
                 listDiceNumberPlayerExit[i] = listNumberDice[diceExit];
                 listNumberDice.RemoveAt(diceExit);
-                ManagerText.instance.textNotification.text = ManagerText.instance.textNotification.text + "  " + listDiceNumberEnemyExit[i];
+                ManagerText.instance.textNotification.text = ManagerText.instance.textNotification.text + "  " + listDiceNumberPlayerExit[i];
             }
             BtnRollExitTrap.instance.Roll.gameObject.SetActive(true);
         }

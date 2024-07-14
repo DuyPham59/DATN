@@ -7,6 +7,7 @@ public class ManagerText : MonoBehaviour
     public static ManagerText instance;
     public Text textWin;
     public Text textNotification;
+    public Text textTurn;
 
     private void Awake()
     {

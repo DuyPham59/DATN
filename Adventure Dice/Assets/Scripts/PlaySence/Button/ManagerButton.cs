@@ -20,10 +20,9 @@ public class ManagerButton : MonoBehaviour
             if (runOne)
             {
                 runOne = false;
-                if (Map.Instance.Grass[PosPlayer.instance.pos].childCount != 0)
+                if (Map.Instance.Grass[PosPlayer.instance.pos].childCount != 0 && Map.Instance.Grass[PosPlayer.instance.pos].GetChild(0).name == "ItemTrap")
                 {
-                    playerTrap = true;
-                    
+                    playerTrap = true;      
                 }
                 else
                 {
@@ -41,7 +40,7 @@ public class ManagerButton : MonoBehaviour
                 checkOne = true;
                 BtnEndTurn.instance.EndTurn.gameObject.SetActive(true);
             }
-            if (MovingManager.instance.SetActivePlayerMoving() && MovingManager.instance.SetActiveEnemyMoving())
+            if (MovingManager.instance.SetActivePlayerMoving() || MovingManager.instance.SetActiveEnemyMoving())
             {
                 BtnEndTurn.instance.EndTurn.gameObject.SetActive(false);
                 checkOne = false;

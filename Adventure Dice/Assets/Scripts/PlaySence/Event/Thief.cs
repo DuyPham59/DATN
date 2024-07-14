@@ -32,13 +32,13 @@ public class Thief : MonoBehaviour
     void CheckItemDelete()
     {
 
-        if (posItemDelete == PosPlayer.instance.pos && !MovingManager.instance.SetActivePlayerMoving() && !runOne)
+        if (Turn.instance.PlayerTurn && posItemDelete == PosPlayer.instance.pos && !MovingManager.instance.SetActivePlayerMoving() && !runOne)
         {
             runOne = true;
             Debug.Log("ThiefPlayer");
             StartCoroutine(ActiveText("PlayerThief"));
         }
-        else if (posItemDelete == PosEnemy.instance.pos && !MovingManager.instance.SetActiveEnemyMoving() && !runOne)
+        else if (!Turn.instance.PlayerTurn && posItemDelete == PosEnemy.instance.pos && !MovingManager.instance.SetActiveEnemyMoving() && !runOne)
         {
             runOne = true;
             Debug.Log("ThiefEnemy");

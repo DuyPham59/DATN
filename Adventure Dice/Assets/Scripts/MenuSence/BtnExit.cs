@@ -15,6 +15,7 @@ public class BtnExit : MonoBehaviour
     }
     public void OnClick()
     {
+        Debug.Log("ExitGame");
         Application.Quit();
     }
 }

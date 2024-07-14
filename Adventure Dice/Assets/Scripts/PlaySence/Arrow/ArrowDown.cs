@@ -31,13 +31,13 @@ public class ArrowDown : MonoBehaviour
 
     void CheckArrow()
     {
-        if (posArrow == PosPlayer.instance.pos && !MovingManager.instance.SetActivePlayerMoving() && runOne)
+        if (Turn.instance.PlayerTurn && posArrow == PosPlayer.instance.pos && !MovingManager.instance.SetActivePlayerMoving() && runOne)
         {
             Debug.Log("PlayerArrowDown");
             runOne = false;
             StartCoroutine(ActiveText("PlayerMoveDown"));
         }
-        else if (posArrow == PosEnemy.instance.pos && !MovingManager.instance.SetActiveEnemyMoving() && runOne)
+        else if (!Turn.instance.PlayerTurn && posArrow == PosEnemy.instance.pos && !MovingManager.instance.SetActiveEnemyMoving() && runOne)
         {
             Debug.Log("EnemyArrowDown");
             runOne = false;

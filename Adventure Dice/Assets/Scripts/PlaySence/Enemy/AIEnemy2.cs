@@ -217,7 +217,7 @@ public class AIEnemy2 : MonoBehaviour
             GameObject cardObject = Instantiate(card, new Vector3(0, 3.96f, 0), Quaternion.identity);
             cardObject.GetComponent<Animator>().enabled = true;
             cardObject.GetComponent<Animator>().SetInteger("AniPlayer", 0);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
             Debug.Log("RunUp");
             CardInEnemyBag.instance.CardBag.Remove(card);
             Destroy(cardObject);
@@ -237,7 +237,7 @@ public class AIEnemy2 : MonoBehaviour
             GameObject cardObject = Instantiate(card, new Vector3(0, 3.96f, 0), Quaternion.identity);
             cardObject.GetComponent<Animator>().enabled = true;
             cardObject.GetComponent<Animator>().SetInteger("AniPlayer", 0);
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(2f);
             Debug.Log("runDown");
             CardInEnemyBag.instance.CardBag.Remove(card);
             Destroy(cardObject);

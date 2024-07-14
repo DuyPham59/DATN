@@ -1,4 +1,4 @@
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
@@ -12,11 +12,15 @@ public class Win : MonoBehaviour
         if(PosPlayer.instance.pos == (Map.Instance.Grass.Count - 1) && !runOne)
         {
             runOne = true;
+            ManagerText.instance.textWin.gameObject.SetActive(true);
+            ManagerText.instance.textWin.text = "Bạn đã thắng";
             StartCoroutine(TextWin("Player"));
         }
         else if(PosEnemy.instance.pos == (Map.Instance.Grass.Count -1) && !runOne)
         {
             runOne = true;
+            ManagerText.instance.textWin.gameObject.SetActive(true);
+            ManagerText.instance.textWin.text = "Bạn đã thua";
             StartCoroutine(TextWin("Enemy"));
         }
     }
@@ -25,15 +29,11 @@ public class Win : MonoBehaviour
     {
         yield return new WaitForSeconds(3);
         if(whoWin == "Player")
-        {
-            ManagerText.instance.textWin.gameObject.SetActive(true);
-            ManagerText.instance.textWin.text = "Ban da thang";
+        {    
             SceneManager.LoadScene(0);
         }
         else if(whoWin == "Enemy")
         {
-            ManagerText.instance.textWin.gameObject.SetActive(true) ;
-            ManagerText.instance.textWin.text = "Ban da thua";
             SceneManager.LoadScene(0);
         }
     }

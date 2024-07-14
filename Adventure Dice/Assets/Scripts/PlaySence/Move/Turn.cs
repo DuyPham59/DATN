@@ -40,19 +40,19 @@ public class Turn : MonoBehaviour
         {
             playerRunOne = true;
             enemyRunOne = false;
-            ManagerText.instance.textNotification.gameObject.SetActive(true);
-            ManagerText.instance.textNotification.text = "Lượt của bạn";
+            ManagerText.instance.textTurn.gameObject.SetActive(true);
+            ManagerText.instance.textTurn.text = "Lượt của bạn";
             yield return new WaitForSeconds(5);
-            ManagerText.instance.textNotification.gameObject.SetActive(false);
+            ManagerText.instance.textTurn.gameObject.SetActive(false);
         }
         else if (!playerTurn && !enemyRunOne)
         {
             enemyRunOne = true;
             playerRunOne = false;
-            ManagerText.instance.textNotification.gameObject.SetActive(true);
-            ManagerText.instance.textNotification.text = "Lượt của đối thủ";
+            ManagerText.instance.textTurn.gameObject.SetActive(true);
+            ManagerText.instance.textTurn.text = "Lượt của đối thủ";
             yield return new WaitForSeconds(5);
-            ManagerText.instance.textNotification.gameObject.SetActive(false);
+            ManagerText.instance.textTurn.gameObject.SetActive(false);
         }  
     }
 

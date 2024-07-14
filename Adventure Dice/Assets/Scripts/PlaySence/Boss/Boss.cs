@@ -63,6 +63,7 @@ public abstract class Boss : MonoBehaviour
             }
             else
             {
+                aniPlayer.SetTrigger("Idle");
                 ManagerText.instance.textNotification.gameObject.SetActive(false);
                 MovingManager.instance.ActivePlayerMovingByName("PlayerMoveDownRandom");
                 checkOnce = true;
@@ -93,6 +94,7 @@ public abstract class Boss : MonoBehaviour
             }
             else
             {
+                aniEnemy.SetTrigger("Idle");
                 MovingManager.instance.ActiveEnemyMovingByName("EnemyMoveDownRandom");
                 checkOnce = true;
             }

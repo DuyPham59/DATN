@@ -31,14 +31,14 @@ public class DoubleMove : MonoBehaviour
 
     void CheckDoubleMove()
     {
-        if (posDoubleMove == PosPlayer.instance.pos && !MovingManager.instance.SetActivePlayerMoving() && !runOne)
+        if (Turn.instance.PlayerTurn && posDoubleMove == PosPlayer.instance.pos && !MovingManager.instance.SetActivePlayerMoving() && !runOne)
         {
             runOne = true;
             Debug.Log("PlayrMOveDouble");
             StartCoroutine(ActiveText("PlayerDoubleMove"));
             
         }
-        else if (posDoubleMove == PosEnemy.instance.pos && !MovingManager.instance.SetActiveEnemyMoving() && !runOne)
+        else if (!Turn.instance.PlayerTurn && posDoubleMove == PosEnemy.instance.pos && !MovingManager.instance.SetActiveEnemyMoving() && !runOne)
         {
             runOne = true;
             Debug.Log("ENemyMoveDOuble");
